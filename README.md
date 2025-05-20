@@ -3,7 +3,7 @@
   <img src="Screenshot%202025-05-20%20103508.png" alt="AgriSmart Project Banner" width="800"/>
 </p><br>
 <p>
-   <img src="" alt="AgriSmart Project Banner" width="800"/>
+   <img src="Screenshot%202025-05-20%20103523.png" alt="AgriSmart Project Banner" width="800"/>
 </p>
 
 # 🌾 AgriSmart Application
