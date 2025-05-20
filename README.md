@@ -90,7 +90,7 @@ Random Forest gave the best results in terms of accuracy and generalization, mak
 
 <!-- Project Banner Image -->
 <p align="center">
-  <img src="Screenshot%202025-05-20%20110150.png" width="800"/>
+  <img src="Screenshot%202025-05-20%20110213.png" width="800"/>
 </p><br>
 
 ### Input Features
