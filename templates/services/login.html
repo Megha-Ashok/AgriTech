@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HopeConnect - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script defer src="{{ url_for('static', filename='login.js') }}"></script>
+  </head>
+  <body class="relative min-h-screen">
+    <!-- 🌱 Background GIF -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="{{ url_for('static', filename='AdobeStock_1417642873_Video_4K_Preview.gif') }}"
+        alt="Background"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black opacity-0"></div>
+      <!-- Overlay -->
+    </div>
+
+    <!-- 🌿 Navbar -->
+    <nav
+      class="bg-gradient-to-r from-green-800 to-lime-600 text-white shadow-lg sticky top-0 z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center flex-wrap"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1995/1995350.png"
+            alt="Farmer Logo"
+            class="w-10 h-10"
+          />
+          <h1 class="text-3xl font-extrabold tracking-wide">AgriSmart</h1>
+        </div>
+        <ul class="flex items-center gap-6 text-lg flex-wrap mt-2 sm:mt-0">
+          <li>
+            <a href="{{ url_for('home') }}" class="hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="{{ url_for('login') }}" class="hover:underline">Login</a>
+          </li>
+          <li>
+            <a href="{{ url_for('register') }}" class="hover:underline"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 🌾 Login Form Overlay -->
+    <div
+      class="relative z-10 flex items-center justify-center min-h-screen px-4"
+    >
+      <div
+        class="bg-white bg-opacity-90 p-8 rounded-2xl shadow-2xl w-full max-w-md"
+      >
+        <h2 class="text-3xl font-bold text-center text-green-700 mb-6">
+          Welcome back
+        </h2>
+
+        <form action="{{ url_for('login') }}" method="POST" class="space-y-5">
+          <div>
+            <label
+              for="email"
+              class="block mb-1 text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+          <div>
+            <label
+              for="password"
+              class="block mb-1 text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            Login
+          </button>
+        </form>
+
+        <p class="text-sm text-center mt-4 text-gray-600">
+          Don't have an account?
+          <a
+            href="{{ url_for('register') }}"
+            class="text-green-600 hover:underline"
+            >Register</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

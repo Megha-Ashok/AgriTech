@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Plant Disease Detector</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to right, #e0f7fa, #fff3e0);
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        color: #00796b;
+        margin-bottom: 30px;
+      }
+      form {
+        background: white;
+        padding: 30px;
+        display: inline-block;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="file"] {
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+      button:hover {
+        background-color: #004d40;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Upload a Plant Leaf Image</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required /><br />
+      <button type="submit">Predict Disease</button>
+    </form>
+  </body>
+</html>

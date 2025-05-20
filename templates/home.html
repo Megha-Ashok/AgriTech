@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriSmart - Empowering Farmers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      .clickable {
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .clickable:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-green-50 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="bg-gradient-to-r from-green-800 to-lime-600 text-white shadow-lg sticky top-0 z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center flex-wrap"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1995/1995350.png"
+            alt="Farmer Logo"
+            class="w-10 h-10"
+          />
+          <h1 class="text-3xl font-extrabold tracking-wide">AgriSmart</h1>
+        </div>
+        <ul class="flex items-center gap-6 text-lg flex-wrap mt-2 sm:mt-0">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li>
+            <a href="{{ url_for('login') }}" class="hover:underline">Login </a>
+          </li>
+          <li>
+            <a href="{{url_for('register')}}" class="hover:underline"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div
+      x-data="{ 
+      current: 0, 
+      slides: [
+        { 
+          image: '/static/agri.jpg',
+          text: '🌱 Empowering Farmers with Smart Crop Recommendations'
+        },
+        { 
+          image: '/static/soil.jpg',
+          text: '🧪 Know Your Soil – Improve Fertility with AgriSmart'
+        },
+        { 
+          image: '/static/protect.jpg',
+          text: '🛡️ Protect Crops from Disease with AI Detection'
+        },
+        { 
+          image: '/static/seeds.webp',
+          text: '💹 Stay Ahead – Real-Time Market Rates for Every Farmer'
+        }
+      ] 
+    }"
+      x-init="setInterval(() => current = (current + 1) % slides.length, 4500)"
+      class="relative w-full h-[70vh] overflow-hidden"
+    >
+      <template x-for="(slide, index) in slides" :key="index">
+        <div
+          x-show="current === index"
+          x-transition:enter="transition-opacity duration-1000"
+          x-transition:leave="transition-opacity duration-1000"
+          class="absolute inset-0"
+        >
+          <img
+            :src="slide.image"
+            class="w-full h-full object-cover brightness-70"
+            alt="Agri Slide"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-white px-4 text-center"
+          >
+            <h2
+              class="text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight drop-shadow-md"
+              x-text="slide.text"
+            ></h2>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!-- Application Description -->
+    <section
+      class="py-16 px-6 bg-gradient-to-br from-white via-green-50 to-white"
+    >
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-800 mb-6">
+          Behind This Application
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          <strong>AgriSmart</strong> empowers farmers by bringing the latest in
+          agriculture technology to their fingertips. It helps in making better
+          decisions regarding crop selection, soil management, disease
+          prediction, and market trends. With simple tools, AI recommendations,
+          and real-time data, AgriSmart ensures increased productivity and
+          reduced risks. <br /><br />
+          Farmers are no longer left behind. With AgriSmart, they're moving
+          ahead—smarter, stronger, and more sustainable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Dashboard -->
+    <section id="services" class="py-14 px-6 bg-green-50">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-green-700 text-center mb-10">
+          Our Smart Services
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <a
+            href="{{ url_for('recommendation') }}"
+            class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3658/3658909.png"
+              alt="Crop Recommendation"
+              class="mx-auto w-16 mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">🌱 Crop Recommendation</h3>
+            <p class="text-gray-700">
+              Get the best crop suggestions based on soil & climate.
+            </p>
+          </a>
+
+          <a
+            href="{{url_for('soil_fertility_range')}}"
+            class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3787/3787779.png"
+              alt="Soil Fertility"
+              class="mx-auto w-16 mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">🌾 Soil Fertility Range</h3>
+            <p class="text-gray-700">
+              Check your soil’s health and get improvement tips.
+            </p>
+          </a>
+
+          <a
+            href="{{url_for('plant_disease')}}"
+            class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2920/2920255.png"
+              alt="Disease Detection"
+              class="mx-auto w-16 mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">
+              🦠 Crop Disease Detection
+            </h3>
+            <p class="text-gray-700">
+              Detect plant diseases early using smart AI tools.
+            </p>
+          </a>
+
+          <a
+            href="/services/market-rate.html"
+            class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2750/2750644.png"
+              alt="Market Price"
+              class="mx-auto w-16 mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">💹 Market Rate</h3>
+            <p class="text-gray-700">
+              Track real-time market prices of seeds and crops.
+            </p>
+          </a>
+
+          <a
+            href="/services/agriculture-news.html"
+            class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/942/942807.png"
+              alt="Agri News"
+              class="mx-auto w-16 mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">📰 Agriculture News</h3>
+            <p class="text-gray-700">
+              Stay informed with the latest agricultural developments and
+              policies.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8 mt-10">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left"
+      >
+        <div>
+          <h4 class="text-xl font-bold mb-3">Seeds & Chemicals</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="https://www.kisanshop.com/"
+                target="_blank"
+                class="hover:underline"
+                >🌾 Order Seeds</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.indiamart.com/proddetail/fertilizers-15489011355.html"
+                target="_blank"
+                class="hover:underline"
+                >🧪 Buy Fertilizers</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.agribegri.com/category/organic-pesticides.php"
+                target="_blank"
+                class="hover:underline"
+                >🛡️ Buy Pesticides</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://krishijagran.com/contact/"
+                target="_blank"
+                class="hover:underline"
+                >📞 Contact Support</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#services" class="hover:underline">Services</a></li>
+            <li><a href="login.html" class="hover:underline">Login</a></li>
+            <li>
+              <a href="register.html" class="hover:underline">Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sm:col-span-2">
+          <h4 class="text-xl font-bold mb-3">About AgriSmart</h4>
+          <p class="text-sm leading-relaxed">
+            AgriSmart is dedicated to transforming agriculture using AI and
+            smart analytics. With intuitive tools and services, we aim to
+            support Indian farmers and improve their yield and income with the
+            power of data.
+          </p>
+        </div>
+      </div>
+      <div class="text-center text-sm mt-8 text-green-200">
+        © 2025 AgriSmart. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
