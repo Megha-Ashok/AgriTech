@@ -26,23 +26,23 @@ Farming is challenging, especially with unpredictable weather, soil conditions, 
 
 ## Key Features & Services
 1.**Crop Recommendation**
-Using machine learning algorithms, we analyze soil data, weather conditions, and historical crop performance to recommend the most suitable crops for a specific location.
+   Using machine learning algorithms, we analyze soil data, weather conditions, and historical crop performance to recommend the most suitable crops for a 
+   specific location.
 
 2.**Soil Fertility Range Analysis**
-Evaluate soil health parameters like pH, nitrogen, phosphorus, and potassium levels to suggest appropriate fertilization strategies.
+   Evaluate soil health parameters like pH, nitrogen, phosphorus, and potassium levels to suggest appropriate fertilization strategies.
 
 3.**Crop Disease Detection**
-Upload images of plants and get instant diagnosis of common crop diseases with recommended treatments to save your crops from damage.
+   Upload images of plants and get instant diagnosis of common crop diseases with recommended treatments to save your crops from damage.
 
 4.**Market Rate Updates**
-Real-time updates on crop prices from various markets help farmers decide the best time to sell their produce.
+   Real-time updates on crop prices from various markets help farmers decide the best time to sell their produce.
 
 5.**Agricultural News**
-Stay informed with the latest news, trends, and government policies affecting agriculture.
+   Stay informed with the latest news, trends, and government policies affecting agriculture.
 
 6. **Seed Purchasing Contacts**  
    Access verified seed suppliers and their contact details to ensure quality inputs.
-
 7. **User Authentication**  
    Secure login and registration system for personalized experience and data security.
 
