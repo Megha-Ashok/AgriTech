@@ -1,11 +1,3 @@
-<!-- Project Banner Image -->
-<p align="center">
-  <img src="Screenshot%202025-05-20%20103508.png" alt="AgriSmart Project Banner" width="800"/>
-</p><br>
-<p align="center">
-   <img src="Screenshot%202025-05-20%20103523.png" alt="AgriSmart Project Banner" width="800"/>
-</p>
-
 # AgriSmart Application 
 
 ## 🌾 Project Overview/Purpose of the Application
@@ -13,6 +5,14 @@
 AgriSmart empowers farmers by bringing the latest in agriculture technology to their fingertips. It helps in making better decisions regarding crop selection, soil management, disease prediction, and market trends. With simple tools, AI recommendations, and real-time data, AgriSmart ensures increased productivity and reduced risks.
 
 Farmers are no longer left behind. With AgriSmart, they're moving ahead—smarter, stronger, and more sustainable.
+
+<!-- Project Banner Image -->
+<p align="center">
+  <img src="Screenshot%202025-05-20%20103508.png" alt="AgriSmart Project Banner" width="800"/>
+</p><br>
+<p align="center">
+   <img src="Screenshot%202025-05-20%20103523.png" alt="AgriSmart Project Banner" width="800"/>
+</p>
 
 ## Why AgriSmart?
 
