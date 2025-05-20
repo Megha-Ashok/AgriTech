@@ -41,9 +41,9 @@ Farming is challenging, especially with unpredictable weather, soil conditions, 
 5.**Agricultural News**
    Stay informed with the latest news, trends, and government policies affecting agriculture.
 
-6. **Seed Purchasing Contacts**  
+6.**Seed Purchasing Contacts**  
    Access verified seed suppliers and their contact details to ensure quality inputs.
-7. **User Authentication**  
+7.**User Authentication**  
    Secure login and registration system for personalized experience and data security.
 
 ---
