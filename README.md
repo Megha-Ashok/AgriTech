@@ -43,6 +43,7 @@ Farming is challenging, especially with unpredictable weather, soil conditions, 
 
 6.**Seed Purchasing Contacts**  
    Access verified seed suppliers and their contact details to ensure quality inputs.
+   
 7.**User Authentication**  
    Secure login and registration system for personalized experience and data security.
 
