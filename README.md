@@ -6,20 +6,7 @@
    <img src="Screenshot%202025-05-20%20103523.png" alt="AgriSmart Project Banner" width="800"/>
 </p>
 
-# 🌾 AgriSmart Application
-
-AgriSmart is an innovative web application designed to empower farmers with data-driven agricultural solutions...
-
 # AgriSmart Application 
-## 🖼️ Project Screenshots
-
-### 🏠 Home Page
-![Home Page](images/homepage.png)
-
-### 🌱 Crop Recommendation
-![Crop Recommendation](images/crop-recommendation.png)
-
-
 
 ## 🌾 Project Overview
 
