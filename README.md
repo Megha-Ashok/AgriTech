@@ -2,7 +2,7 @@
 <p align="center">
   <img src="Screenshot%202025-05-20%20103508.png" alt="AgriSmart Project Banner" width="800"/>
 </p><br>
-<p>
+<p align="center>
    <img src="Screenshot%202025-05-20%20103523.png" alt="AgriSmart Project Banner" width="800"/>
 </p>
 
