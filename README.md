@@ -143,9 +143,9 @@ After testing multiple classifiers, the **Random Forest Classifier** (non-ensemb
 
 For further assistance or partnership inquiries, please contact:
 
-- **Seed Suppliers:** [Insert list or link here]  
-- **Support Team:** support@agrismart.com  
-- **Social Media:** [LinkedIn](#), [Twitter](#), [Facebook](#)
+- **Buy Pesticides:** [https://agribegri.com/category/organic-pesticides.php]
+- **Buy Fertilizers:**[https://www.indiamart.com/proddetail/fertilizers-15489011355.html]
+- **Agriculture Support:**[https://krishijagran.com/contact/#google_vignette]
 
 ---
 
