@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crop Market Rate Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+    <h1 class="text-3xl font-bold mb-6 text-green-700">
+      Crop Market Rate Tracker
+    </h1>
+
+    <div class="w-full max-w-xl">
+      <input
+        id="cropInput"
+        type="text"
+        placeholder="Enter crop name (e.g., Wheat)"
+        class="border border-gray-300 rounded p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <button
+        onclick="searchRates()"
+        class="bg-green-600 text-white font-semibold rounded px-6 py-3 w-full mb-6 hover:bg-green-700 transition"
+      >
+        Search
+      </button>
+
+      <div id="results" class="space-y-4"></div>
+    </div>
+
+    <script>
+      async function searchRates() {
+        const crop = document.getElementById("cropInput").value.trim();
+        if (!crop) {
+          alert("Please enter a crop name.");
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `http://localhost:5000/api/rates?crop=${encodeURIComponent(crop)}`
+          );
+          if (!res.ok) throw new Error("Failed to fetch data");
+          const data = await res.json();
+
+          const resultsDiv = document.getElementById("results");
+          resultsDiv.innerHTML = "";
+
+          if (data.length === 0) {
+            resultsDiv.innerHTML = `<p class="text-center text-gray-600">No rates found for "${crop}".</p>`;
+            return;
+          }
+
+          data.forEach((item) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-white p-5 rounded-lg shadow hover:shadow-lg transition";
+
+            card.innerHTML = `
+            <h2 class="text-xl font-bold text-green-700 mb-2">${
+              item.crop_name
+            }</h2>
+            <p><span class="font-semibold">Location:</span> ${item.location}</p>
+            <p><span class="font-semibold">Rate:</span> ₹${item.rate_per_kg.toFixed(
+              2
+            )} / kg</p>
+            <p><span class="font-semibold">Date:</span> ${item.date}</p>
+          `;
+
+            resultsDiv.appendChild(card);
+          });
+        } catch (err) {
+          alert("Error fetching crop rates: " + err.message);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -42,14 +42,24 @@
         <ul class="flex items-center gap-6 text-lg flex-wrap mt-2 sm:mt-0">
           <li><a href="#" class="hover:underline">Home</a></li>
           <li><a href="#services" class="hover:underline">Services</a></li>
+
+          {% if session.get('user') %}
+          <!-- When logged in -->
+          <li class="font-medium">Hello,{{ session['user'] }}</li>
           <li>
-            <a href="{{ url_for('login') }}" class="hover:underline">Login </a>
+            <a href="{{ url_for('logout') }}" class="hover:underline">Logout</a>
+          </li>
+          {% else %}
+          <!-- When not logged in -->
+          <li>
+            <a href="{{ url_for('login') }}" class="hover:underline">Login</a>
           </li>
           <li>
-            <a href="{{url_for('register')}}" class="hover:underline"
+            <a href="{{ url_for('register') }}" class="hover:underline"
               >Register</a
             >
           </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -180,7 +190,7 @@
           </a>
 
           <a
-            href="/services/market-rate.html"
+            href="{{url_for('market_rate')}}"
             class="block bg-white p-6 rounded-xl text-center clickable shadow-md"
           >
             <img

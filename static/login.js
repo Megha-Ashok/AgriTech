@@ -16,3 +16,10 @@ function toggleForm(formType) {
     registerBtn.classList.add('active');
   }
 }
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const alerts = document.querySelectorAll('.fixed > div');
+      alerts.forEach(alert => alert.style.display = 'none');
+    }, 4000);
+  });
+
