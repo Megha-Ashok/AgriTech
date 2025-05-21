@@ -51,6 +51,11 @@ Farming is challenging, especially with unpredictable weather, soil conditions, 
 
 ## 🌱 Crop Recommendation — Features and Model Selection
 
+<!-- Project Banner Image -->
+<p align="center">
+  <img src="Screenshot%202025-05-20%20110150.png" width="800"/>
+</p><br>
+
 ### Input Features
 
 - **N (Nitrogen), P (Phosphorus), K (Potassium):** Essential soil nutrients influencing plant growth.
@@ -82,6 +87,11 @@ Random Forest gave the best results in terms of accuracy and generalization, mak
 ---
 
 ## 🌿 Soil Fertility Range Analysis — Features and Model Selection
+
+<!-- Project Banner Image -->
+<p align="center">
+  <img src="Screenshot%202025-05-20%20110213.png" width="800"/>
+</p><br>
 
 ### Input Features
 
